@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Timesheets</title>
+  <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+ <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js" > </script>
+<%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js", "application.js" %>
+
+  <%= csrf_meta_tags %>
+
+
+</head>
+<body>
+
+
+	<div class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+			<a class="brand">Timesheets</a>
+			<% if user_signed_in? %>
+			<ul class="nav">
+				<li><%=link_to "Time" , time_entries_path %></li>
+				<li><%=link_to "Clients" , clients_path %></li>
+				<li><%=link_to "Projects" , projects_path %></li>
+				
+				
+				
+				<li><%=link_to "Reports", reports_path  %></li>
+				<li><%=link_to "Team",team_path %> </li>
+
+			</ul>
+			<ul class="nav right">
+				<li>
+				<%= link_to "logout", destroy_user_session_path, :method=>"delete"%>
+				</li>
+			</ul>
+			<% else %>
+			<ul class="nav right">
+				<li>
+				<%=link_to "Sign up", new_user_registration_path%>
+				</li>
+				<li><%=link_to "Sign in", new_user_session_path %></li>
+			</ul>
+			<% end %>
+			</div>
+		</div>
+	</div>
+	<div class="content container">
+		<p class="alert"><%=alert%></p>
+		<p class="notice"><%=notice%></p>
+		<%= yield %>
+	</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<br>
+<h2> Monthly Report </h2>
+
+	<% @monthly_efforts_to_client.keys.sort.each do |month,year| %>
+		<h3><%= month.strftime('%B-%Y') %></h3>
+		<% @mins=0 %>
+		<% @same_date='1987-04-01' %>
+		<% @same_project="default" %>
+
+
+	<% @monthly_efforts_to_client[month].each do |report|%>
+
+	
+		
+		
+			<div class="report_entry row">
+			<div class="date span2"> <%= report.effective_date %></div>
+			<div class="workedhours span2"> <%= report.minutes  %>  </div>
+			<div class="minutes span2"> <%= report.client.client_name %></div>
+			<div class="minutes span2"> <%= report.project.name %></div>
+
+			</div>
+		
+
+	<% end %>
+
+<% end %>
+		
+

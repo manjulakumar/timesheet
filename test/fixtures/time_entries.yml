@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  minutes: 1
+  project: 
+  description: MyText
+  billable: false
+  user: 
+
+two:
+  minutes: 1
+  project: 
+  description: MyText
+  billable: false
+  user: 

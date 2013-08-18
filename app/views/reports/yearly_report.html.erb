@@ -1,0 +1,23 @@
+<br>
+<h2> Yearly Report </h2>
+
+
+
+<% @report_years.keys.sort.each do |month,year| %>
+
+<h3><%= month.strftime('%Y-%B') %></h3>
+	<% @mins=0 %>
+	<% @month_mins=0 %>
+
+		<% @report_years[month].each do |report| %>
+			<% @projectname=report.project.name %>
+			<% @mins=report.minutes %>
+			<% @month_mins=@month_mins+@mins %>
+		<% end %>
+
+<div class="report_entry row">
+	<div class="project span2"> <%= @projectname %> </div>
+	<div class="mins span2"> <%= @month_mins %> </div>
+</div>
+
+<% end %>

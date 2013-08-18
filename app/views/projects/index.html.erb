@@ -1,0 +1,25 @@
+<br>
+
+<%=simple_form_for @project do |f|%>
+
+<%= f.input :name %>
+
+<%= f.input :client_id, collection: Client.all, :label_method => :client_name, :value_method=>:id %>
+
+
+	<%= f.submit %>
+	<% end %>
+
+
+<div class="project_list">
+	<% @projects.each do |project| %> 
+
+
+	<b>Project Name </b> <%= project.name %>
+
+	 <b> Client </b> <%= project.client.client_name %>
+
+	<br>
+	<% end %> 
+</div>
+

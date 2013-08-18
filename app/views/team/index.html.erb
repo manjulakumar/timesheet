@@ -1,0 +1,26 @@
+<h1> My Team </h2>
+
+
+<%= simple_form_for @user, :url=>create_member_path do |f| %>
+
+<%= f.input :email %>
+
+<%= f.submit %>
+
+<% end %>
+
+
+
+
+
+
+<br>
+<%= @team.each do |user| %>
+
+		<div class="time_entry row">
+			  <b> <div class="email span2"> <%= user.email %></div> </b>
+			  
+		</div>
+
+<% end %>
+		

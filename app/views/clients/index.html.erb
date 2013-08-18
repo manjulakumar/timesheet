@@ -1,0 +1,19 @@
+<br>
+
+<%=simple_form_for @client do |f|%>
+
+<%= f.input :client_name %>
+
+	<%= f.submit %>
+	<% end %>
+
+
+<div class="client_list">
+	<% @clients.each do |client| %> 
+
+	<b>Client</b> <%= client.client_name %>
+
+	<br>
+	<% end %> 
+</div>
+

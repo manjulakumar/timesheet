@@ -1,0 +1,33 @@
+<br>
+
+<h1> Report for Projects </h1>
+
+<br>
+<% @time_reports.each do |time_report| %>
+	<div class="report_entry">
+		<b><%= time_report.name %></b> 
+
+		<%= link_to "Monthly Reports", monthlyreport_path(time_report) %>
+		<%= link_to "Yearly Reports",yearlyreport_path(time_report) %>
+		<%= link_to "Employee efforts",userefforts_path(time_report) %>
+	<div>
+	
+<%end %>
+
+
+<br>
+	<h1> Report for Clients </h1>
+<br>
+<% @clients.each do |client| %>
+	<div class="report_entry">
+		<b><%= client.client_name %></b> 
+
+		<%= link_to "Monthly Reports", clientsreport_path(client) %>
+		
+	<div>
+
+
+<%end %>
+
+
+
